@@ -4,7 +4,6 @@ from scipy.fftpack import dct, idct
 from PIL import Image
 import io
 
-
 # Functions for RGB <-> YCbCr conversion and DCT processing
 def rgb2ycbcr(image):
     r, g, b = image[..., 0], image[..., 1], image[..., 2]
@@ -12,7 +11,6 @@ def rgb2ycbcr(image):
     cb = 128 - 0.168736 * r - 0.331364 * g + 0.5 * b
     cr = 128 + 0.5 * r - 0.460525 * g - 0.081975 * b
     return y, cb, cr
-
 
 def ycbcr2rgb(y, cb, cr):
     r = y + 1.402 * (cr - 128)
